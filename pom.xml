@@ -69,6 +69,7 @@
     <slf4j.version>2.0.12</slf4j.version>
     <logback.version>1.2.10</logback.version>
     <log4j.version>2.17.1</log4j.version>
+    <log4j-slf4j2.version>2.24.1</log4j-slf4j2.version>
     <commons-logging.version>1.2</commons-logging.version>
     <postgresql.version>42.5.6</postgresql.version>
     <ini4j.version>0.5.4</ini4j.version>
@@ -368,7 +369,8 @@
     <!-- region Protobuf / gRPC configuration-->
     <protobuf-maven-plugin.version>0.6.1</protobuf-maven-plugin.version>
     <protoc.version>3.11.4</protoc.version>
-    <grpc.version>1.27.0</grpc.version>
+    <grpc.version>1.67.1</grpc.version>
+    <grpc-protobuf.version>1.68.1</grpc-protobuf.version>
     <!-- endregion -->
 
     <hv-security-web.version>0.9.0</hv-security-web.version>
@@ -487,6 +489,11 @@
         <groupId>org.apache.logging.log4j</groupId>
         <artifactId>log4j-slf4j-impl</artifactId>
         <version>${log4j.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-slf4j2-impl</artifactId>
+        <version>${log4j-slf4j2.version}</version>
       </dependency>
       <dependency>
         <groupId>org.apache.logging.log4j</groupId>
@@ -1205,11 +1212,16 @@
       <dependency>
         <groupId>io.grpc</groupId>
         <artifactId>grpc-protobuf</artifactId>
-        <version>${grpc.version}</version>
+        <version>${grpc-protobuf.version}</version>
       </dependency>
       <dependency>
         <groupId>io.grpc</groupId>
         <artifactId>grpc-stub</artifactId>
+        <version>${grpc.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.grpc</groupId>
+        <artifactId>grpc-context</artifactId>
         <version>${grpc.version}</version>
       </dependency>
       <!-- endregion -->
